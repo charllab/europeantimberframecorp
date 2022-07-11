@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <g id="facebook" transform="translate(1 1)">
+    <path id="Shape" d="M22.959,15.228a4.069,4.069,0,0,0-1.1-.168c-.448,0-1.413.285-1.413.838v1.324h2.291v2.23H20.444V25.6H18.137V19.452H17v-2.23h1.137V16.1c0-1.693.792-3.1,2.7-3.1a9.376,9.376,0,0,1,2.463.252l-.344,1.978Z" transform="translate(-3.606 -2.757)" fill="#fff" fill-rule="evenodd"/>
+    <circle id="Oval" cx="16.5" cy="16.5" r="16.5" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+  </g>
+</svg>

@@ -64,19 +64,5 @@ mark {
 // Contextual
 
 .bg-white {
-	background-color: $white;
-}
-
-// Containers
-
-.container-fluid,
-.container {
-    padding: 0 2.25rem;
-}
-
-@include media-breakpoint-down(lg) {
-    .container {
-        padding: 0 2.25rem;
-        max-width: 100%;
-    }
+	background-color: white;
 }

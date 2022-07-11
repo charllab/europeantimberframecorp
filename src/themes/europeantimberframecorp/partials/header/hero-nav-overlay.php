@@ -1,16 +1,17 @@
-<header id="header" class="hero-nav-overlay bg-dark">
-    <a href="" target="_blank" class="btn btn-light rounded-0 mb-4 d-block d-lg-none">
-        Call To Action
-    </a>
+<header id="header" class="hero-nav-overlay bg-warning">
 
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <div class="nav-logo">
+        <div class="container d-flex justify-content-between align-items-start">
+            <div class="nav-logo position-relative">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php bloginfo('template_url'); ?>/images/logo.svg"
-                         alt="<?php bloginfo('name'); ?> - Logo"
-                         class="img-fluid">
+
+                    <?php get_template_part('partials/header/svg-logo-grey'); ?>
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
+                    <span class="bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="48" viewBox="0 0 5000 48">
+                          <path id="Path_1112" data-name="Path 1112" d="M0,0H5000V48H0Z" fill="#1c1c1c" opacity="0.25"/>
+                        </svg>
+                    </span>
                 </a>
             </div>
 
@@ -18,24 +19,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <div class="d-lg-flex flex-lg-column d-none d-lg-block">
-                <div id="top-buttons" class="d-flex ml-auto mb-2 justify-content-end align-items-center">
-                    <a class="btn btn-link text-white my-auto mr-2" href="tel:<?php echo strip_tel(get_field('phone_number', 'options')); ?>"><?php the_field('phone_number', 'options'); ?></a>
-
-                    <div class="social-links mr-4">
-                        <?php while( have_rows('social_links', 'options') ): the_row(); ?>
-                            <a class="social-link btn btn-link px-1xx text-white" target="_blank" href="<?php the_sub_field('url'); ?>">
-                                <i class="<?php the_sub_field('icon_class'); ?> fa-lg">
-                                    <span class="sr-only"><?php the_sub_field('label'); ?></span>
-                                </i>
-                            </a>
-                        <?php endwhile; ?>
-                    </div>
-
-                    <a href="" target="_blank" class="btn my-auto btn-light">
-                        Call To Action
-                    </a>
-                </div>
+            <div class="d-none d-lg-flex mt-lg-1 mainnav">
 
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
@@ -46,6 +30,17 @@
                     'menu_id' => 'main-menu',
                     'walker' => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
+
+                <div class="social-links ml-lg-50">
+                    <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+                        <a class="social-link text-white" target="_blank" href="<?php the_sub_field('url'); ?>">
+                            <i class="<?php the_sub_field('icon_class'); ?>">
+                                <span class="sr-only"><?php the_sub_field('label'); ?></span>
+                            </i>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -55,7 +50,7 @@
             'theme_location' => 'primary',
             'container_class' => 'container',
             'container_id' => 'mainnav',
-            'menu_class' => 'navbar-nav ml-auto',
+            'menu_class' => 'navbar-nav ml-auto d-lg-none',
             'fallback_cb' => '',
             'menu_id' => 'main-menu',
             'walker' => new understrap_WP_Bootstrap_Navwalker(),
@@ -66,8 +61,8 @@
 
             <div class="social-links">
                 <?php while( have_rows('social_links', 'options') ): the_row(); ?>
-                    <a class="social-link btn btn-link text-white px-0 mr-2" target="_blank" href="<?php the_sub_field('url'); ?>">
-                        <i class="<?php the_sub_field('icon_class'); ?> fa-2x">
+                    <a class="social-link text-white" target="_blank" href="<?php the_sub_field('url'); ?>">
+                        <i class="<?php the_sub_field('icon_class'); ?>">
                             <span class="sr-only"><?php the_sub_field('label'); ?></span>
                         </i>
                     </a>

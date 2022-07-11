@@ -1,25 +1,53 @@
 .hero-nav-overlay {
-    padding: 2rem 0;
-    @include gradY(rgba($black, .4), 0%, transparent, 100%);
+
+    padding: 0;
+
+    .navbar {
+        padding: 0 $spacer/4;
+    }
 
     .navbar-dark .navbar-toggler {
-        background: $white;
+        margin-top: $spacer;
+        background: transparent;
         outline: none;
+        border: none;
+        padding: .75rem;
+        position: relative;
+        z-index: 9997;
 
         .fa-bars {
-            color: $body-color;
+            color: white;
             font-size: 110%;
             line-height: 1.2;
         }
     }
 
-    .nav-logo img {
-        width: 50px;
+    .nav-logo svg.logo {
+        width: 126px;
         height: auto;
+        position: relative;
+        z-index: 9999;
+        padding-top: $spacer/4;
+        @include media-breakpoint-up(lg) {
+            padding-top: 0;
+            width: 168px;
+        }
+    }
+    .mainnav,
+    .mainnav-m {
+        position: relative;
+        z-index: 9998;
     }
 
-    .navbar-expand-lg > .container {
-        padding: 0 1.25rem;
+    .bar {
+        position: absolute;
+        left: $spacer*4;
+        top: $spacer;
+        z-index: 2;
+    }
+
+    #mainnav {
+        z-index: 9998;
     }
 
     .navbar-nav .nav-link {
@@ -33,12 +61,12 @@
 
     @include media-breakpoint-up(lg) {
         .navbar-nav .menu-item.show > .nav-link {
-            background: $white;
-            color: $body-color;
+            background: darken($primary,20%);
+            color: white;
         }
 
         .navbar-nav .nav-link {
-            padding: 0.4rem 1rem 0.4rem 1rem;
+            padding: 0.8rem;
         }
 
         .dropdown-menu {
@@ -48,14 +76,14 @@
             right: auto;
             left: 0;
             margin: 0;
-            background: $white;
+            background: darken($primary,20%);
             width: 100%;
 
             & > .menu-item > .nav-link {
                 padding-left: $spacer;
                 padding-right: $spacer;
                 font-family: $font-family-sans-serif;
-                color: $gray-700;
+                color: white;
                 font-size: 90%;
             }
         }
@@ -76,5 +104,30 @@
             margin: 0;
             padding: 0 0 0 1.5rem;
         }
+    }
+}
+
+.social-links {
+    height: $spacer*2;
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+    }
+}
+a.social-link {
+    margin-left: $spacer/2;
+    border: 2px solid rgba(white, 0.2);
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-decoration: none !important;
+    &:hover {
+        border: 2px solid rgba(white, 0.7);
     }
 }
