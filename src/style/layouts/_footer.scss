@@ -1,12 +1,42 @@
 footer {
 
+    overflow: hidden;
+
+    .nav-logo {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            padding-top: 0;
+            bottom: -1px;
+            left: 0;
+            z-index: 9999;
+        }
+    }
+
+    .footer {
+        background-color: #161F43;
+    }
+
+    .whiteout {
+        position: absolute;
+        bottom: -2px;
+        right: 92%;
+    }
+
 }
 
 #footernav {
+
+    @include media-breakpoint-up(lg) {
+        li.nav-item {
+            padding-bottom: 0;
+            padding-left: $spacer/4;
+            padding-right: $spacer/4;
+        }
+    }
+
     .nav-link {
         text-align: center;
-        padding: 0;
-        border: 1px solid black;
+        padding: $spacer/4;
     }
     .social-links {
         justify-content: center;
@@ -14,15 +44,6 @@ footer {
     a.social-link {
         border-color: rgba(#D0D7DD, 0.2);
         color: #D0D7DD;
-    }
-
-    .nav-logo {
-        @include media-breakpoint-up(lg) {
-            position: absolute;
-            padding-top: 0;
-            bottom: 0;
-            left: 0;
-        }
     }
 
     .nav-logo svg.logo {

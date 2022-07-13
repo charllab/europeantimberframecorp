@@ -1,4 +1,5 @@
 <footer>
+
     <section id="letstalk" class="bg-primary py-3 py-lg-5">
         <div class="container">
             <span class="text-white text-uppercase">- Hello!</span>
@@ -8,56 +9,89 @@
     </section>
 
 
-    <section id="footernav" class="position-relative">
-        <?php wp_nav_menu([
-            'theme_location' => 'secondary',
-            'container_class' => 'container bg-danger',
-            'container_id' => 'footernav',
-            'menu_class' => 'navbar-footer list-unstyled mb-0',
-            'fallback_cb' => '',
-            'menu_id' => 'footer-menu',
-            'walker' => new understrap_WP_Bootstrap_Navwalker(),
-        ]); ?>
+    <section id="footernav" class="py-1 py-lg-50">
 
         <div class="container">
+            <div class="row justify-content-lg-between align-items-center">
 
-            <div class="social-links">
-                <?php while( have_rows('social_links', 'options') ): the_row(); ?>
-                    <a class="social-link" target="_blank" href="<?php the_sub_field('url'); ?>">
-                        <i class="<?php the_sub_field('icon_class'); ?>">
-                            <span class="sr-only"><?php the_sub_field('label'); ?></span>
-                        </i>
-                    </a>
-                <?php endwhile; ?>
-            </div><!-- social-links -->
+                <div class="col-lg-8 offset-lg-2">
+                    <?php wp_nav_menu([
+                        'theme_location' => 'secondary',
+                        'container_class' => '',
+                        'container_id' => 'footer-nav',
+                        'menu_class' => 'navbar-footer list-unstyled mb-0 d-lg-flex justify-content-center',
+                        'fallback_cb' => '',
+                        'menu_id' => 'footer-menu',
+                        'walker' => new understrap_WP_Bootstrap_Navwalker(),
+                    ]); ?>
+                </div><!-- col -->
 
-            <div class="nav-logo position-relative d-flex justify-content-center">
+                <div class="col-lg-2">
+
+                    <div class="social-links mb-1 mb-lg-0">
+                        <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+                            <a class="social-link" target="_blank" href="<?php the_sub_field('url'); ?>">
+                                <i class="<?php the_sub_field('icon_class'); ?>">
+                                    <span class="sr-only"><?php the_sub_field('label'); ?></span>
+                                </i>
+                            </a>
+                        <?php endwhile; ?>
+                    </div><!-- social-links -->
+
+                    <div class="nav-logo d-flex justify-content-center d-lg-none">
+                        <a href="<?php echo esc_url(home_url('/')); ?>">
+
+                            <img src="<?php bloginfo('template_url'); ?>/images/logo-footer.svg"
+                                 alt="<?php bloginfo('name'); ?> - Logo"
+                                 class="img-fluid">
+                            <span class="sr-only"><?php bloginfo('name'); ?></span>
+
+                        </a>
+                    </div><!-- nav-logo -->
+
+                </div><!-- col -->
+
+            </div><!-- row -->
+        </div><!-- container -->
+
+    </section>
+
+    <section class="footer pt-1">
+        <div class="container position-relative">
+
+            <div class="nav-logo d-none d-lg-block">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
 
-                    <?php get_template_part('partials/header/svg-logo-grey'); ?>
+                    <img src="<?php bloginfo('template_url'); ?>/images/logo-footer.svg"
+                         alt="<?php bloginfo('name'); ?> - Logo"
+                         class="img-fluid">
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
 
-                    <span class="bar d-none d-lg-block">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="48" viewBox="0 0 5000 48">
-                          <path id="Path_1112" data-name="Path 1112" d="M0,0H5000V48H0Z" fill="#374377"/>
-                        </svg>
-                    </span>
                 </a>
             </div><!-- nav-logo -->
 
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-left">
-                    <p>&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
+            <div class="row text-white justify-content-center justify-content-lg-between">
+                <div class="col-12 col-lg-4 offset-lg-2 text-center text-lg-left">
+                    <p class="mb-50">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
                 </div><!-- col -->
-                <div class="col-lg-6 text-center text-lg-right">
-                    <p>Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank">Sproing&nbsp;Creative</a>
+                <div class="col-10 col-lg-6 text-center text-lg-right">
+                    <p>Designed, Developed and Hosted by
+                        <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
                     </p>
                 </div><!-- col -->
             </div><!-- row -->
 
-        </div><!-- container -->
+            <span class="whiteout d-none d-lg-block">
+               <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="120" viewBox="0 0 5000 120">
+                  <rect id="Rectangle_2290" data-name="Rectangle 2290" width="5000" height="120" fill="#fff"/>
+                </svg>
 
-    </section>
+            </span>
+
+
+        </div><!-- container -->
+    </section><!-- bg-primary -->
+
 </footer>
 
 <?php wp_footer(); ?>
