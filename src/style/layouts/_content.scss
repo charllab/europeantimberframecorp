@@ -1,36 +1,85 @@
 /* Sections */
 
-.section {
-    position: relative;
-    width: 100%;
-    padding: 4rem 0;
-    color: inherit;
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+.ping-pong {
 
-    &.bg-pos--top-center {
-        background-position: top center;
+    padding: $spacer*2 0;
+
+    p {
+        margin-bottom: $spacer*.5;
     }
 
-    &.section--sm {
-        padding: 3rem 0;
+}
+
+.ping-pong--img-column {
+
+    p + img {
+        margin-top: $spacer*2;
     }
 
-    &.section--lg {
-        padding: 6rem 0;
+    img + a {
+        margin-top: $spacer*3;
     }
 
-    @include media-breakpoint-down(md) {
-        padding: 2.5rem 0;
+}
 
-        &.section--sm {
-            padding: 2rem 0;
+.ping-pong--txt-btns {
+
+    .ping-pong--txt-column {
+        p + a, p + a + a {
+            margin-top: $spacer;
         }
 
-        &.section--lg {
-            padding: 4rem 0;
+        a + a {
+            margin-left: $spacer/2;
+            @extend .btn-outline-primary;
         }
+    }
+
+}
+
+
+@include media-breakpoint-up(lg) {
+
+    .ping-pong--img-full .container {
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ping-pong--img-full .ping-pong--img-column {
+        min-height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .ping-pong--max-width {
+        max-width: 538px; // 455 + spacer*4 = 575
+    }
+
+    .ping-pong--left .ping-pong--max-width {
+        margin-left: auto;
+        padding-right: $spacer*4;
+    }
+
+    .ping-pong--right .ping-pong--max-width {
+        margin-right: auto;
+        padding-left: $spacer*5;
+    }
+
+    .ping-pong--right .ping-pong--txt-column {
+        order: 2;
+    }
+
+    .ping-pong--right .ping-pong--img-column {
+        order: 1;
+    }
+
+}
+
+// remove the background on the ping pong
+@include media-breakpoint-down(lg) {
+    .ping-pong--img-column {
+        background-image: none !important;
     }
 }

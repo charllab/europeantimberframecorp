@@ -56,17 +56,15 @@
 
     </section>
 
-    <section class="footer pt-1">
+    <section class="footer pt-50">
         <div class="container position-relative">
 
             <div class="nav-logo d-none d-lg-block">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-
                     <img src="<?php bloginfo('template_url'); ?>/images/logo-footer.svg"
                          alt="<?php bloginfo('name'); ?> - Logo"
                          class="img-fluid">
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
-
                 </a>
             </div><!-- nav-logo -->
 
@@ -75,7 +73,7 @@
                     <p class="mb-50">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
                 </div><!-- col -->
                 <div class="col-10 col-lg-6 text-center text-lg-right">
-                    <p>Designed, Developed and Hosted by
+                    <p class="mb-50">Designed, Developed and Hosted by
                         <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
                     </p>
                 </div><!-- col -->
@@ -85,7 +83,6 @@
                <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="120" viewBox="0 0 5000 120">
                   <rect id="Rectangle_2290" data-name="Rectangle 2290" width="5000" height="120" fill="#fff"/>
                 </svg>
-
             </span>
 
 

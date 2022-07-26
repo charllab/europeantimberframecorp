@@ -1,7 +1,17 @@
 jQuery(function () {
 
-
-    $('').ma
+    // pingpong
+    $('.js-owl-carousel--ping-pong').owlCarousel({
+        stagePadding: 0,
+        loop:true,
+        margin:0,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            }
+        }
+    })
 
     // Auto target _blank external links
     targetBlankExternalLinks();
