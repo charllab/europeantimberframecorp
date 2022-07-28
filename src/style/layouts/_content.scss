@@ -2,12 +2,24 @@
 
 .ping-pong {
 
-    padding: $spacer*2 0;
+    padding: 0;
+    margin-bottom: $spacer;
+
+    @include media-breakpoint-up(lg) {
+        padding: $spacer*2 0;
+        margin-bottom: 0;
+    }
 
     p {
         margin-bottom: $spacer*.5;
     }
 
+}
+
+.ping-pong--txt-column {
+    @include media-breakpoint-down(lg) {
+        margin-bottom: $spacer;
+    }
 }
 
 .ping-pong--img-column {
@@ -17,7 +29,7 @@
     }
 
     img + a {
-        margin-top: $spacer*3;
+        margin-top: $spacer*2;
     }
 
 }
@@ -25,6 +37,7 @@
 .ping-pong--txt-btns {
 
     .ping-pong--txt-column {
+
         p + a, p + a + a {
             margin-top: $spacer;
         }
@@ -33,6 +46,14 @@
             margin-left: $spacer/2;
             @extend .btn-outline-primary;
         }
+    }
+
+    .ping-pong--img-column {
+
+        p + img {
+            margin-top: 0;
+        }
+
     }
 
 }
@@ -44,13 +65,6 @@
         max-width: 1920px;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .ping-pong--img-full .ping-pong--img-column {
-        min-height: 500px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
     }
 
     .ping-pong--max-width {
@@ -77,9 +91,20 @@
 
 }
 
+@include media-breakpoint-up(xl) {
+
+    .ping-pong--img-full .ping-pong--img-column {
+        min-height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+}
+
 // remove the background on the ping pong
 @include media-breakpoint-down(lg) {
-    .ping-pong--img-column {
+    .ping-pong--img-full .ping-pong--img-column {
         background-image: none !important;
     }
 }

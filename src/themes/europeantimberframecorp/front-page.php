@@ -5,6 +5,16 @@
 
         <?php while( have_rows('ping_pong_general') ): the_row();?>
 
+        <?php $image = get_sub_field('image');
+        if( $image ):
+            // Image variables.
+            $url = $image['url'];
+            $title = $image['title'];
+            $alt = $image['alt'];
+        endif;
+        ?>
+
+
         <section class="ping-pong ping-pong--img-full ping-pong--<?php the_sub_field('layout'); ?> ping-pong--txt-btns">
             <div class="container">
                 <div class="row">
@@ -28,9 +38,9 @@
                     </div><!-- col -->
 
                     <div class="col-lg-6 text-center ping-pong--img-column px-0"
-                         style="background-image: url('http://via.placeholder.com/702x528');">
-                        <img src="http://via.placeholder.com/768x578" alt=" "
-                             class="d-xl-none img-fluid d-block mt-2">
+                         style="background-image: url('<?php echo esc_url($url); ?>');">
+                        <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
+                             class="d-xl-none img-fluid d-block">
                     </div><!-- col -->
 
                 </div><!-- row -->
@@ -38,6 +48,58 @@
         </section>
 
         <?php endwhile; ?>
+
+<?php endif; ?>
+
+
+<?php if( have_rows('ping_pong_narrow') ): ?>
+
+    <?php while( have_rows('ping_pong_narrow') ): the_row();?>
+
+        <section class="ping-pong ping-pong--<?php the_sub_field('layout'); ?> ping-pong--txt-btns">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 ping-pong--txt-column">
+                        <div class="ping-pong--max-width">
+                            <?php the_sub_field('content'); ?>
+
+                            <?php if( get_sub_field('buttons') ): ?>
+                                <?php if( have_rows('buttons') ): ?>
+                                    <?php while( have_rows('buttons') ): the_row(); ?>
+
+                                        <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+
+                            <?php endif; ?>
+
+                        </div><!-- ping-pong--max-width -->
+                    </div><!-- col -->
+
+                    <div class="col-lg-6 text-center ping-pong--img-column px-0">
+                        <?php if( get_sub_field('text_above_image') ): ?>
+                            <p class="font-weight-bold mb-1"><?php the_sub_field('text_above_image'); ?></p>
+                        <?php endif; ?>
+                        <img src="http://via.placeholder.com/768x578" alt=" " class="img-fluid d-block">
+                        <?php if( get_sub_field('buttons_below_image') ): ?>
+                            <?php if( have_rows('buttons_below_image') ): ?>
+                                <?php while( have_rows('buttons_below_image') ): the_row(); ?>
+
+                                    <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+
+                        <?php endif; ?>
+                    </div><!-- col -->
+
+                </div><!-- row -->
+            </div><!-- container -->
+        </section>
+
+    <?php endwhile; ?>
 
 <?php endif; ?>
 
