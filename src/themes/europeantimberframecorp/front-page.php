@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-
+<main>
+    <!--main content here-->
+</main>
 <?php if( have_rows('ping_pong_general') ): ?>
 
         <?php while( have_rows('ping_pong_general') ): the_row();?>

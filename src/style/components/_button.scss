@@ -3,6 +3,7 @@ button, .btn {
 }
 
 .btn {
+    text-transform: capitalize;
     border-radius: 0;
     font-size: 1rem;
     line-height: 1.2;
@@ -12,5 +13,8 @@ button, .btn {
 }
 
 .btn-outline-primary {
+    background-color: white;
+}
+.btn-light {
     background-color: white;
 }

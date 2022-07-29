@@ -1,5 +1,46 @@
 jQuery(function () {
 
+    // Hero Carousel
+    var owlHero = jQuery('#hero-slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        responsiveClass: true,
+        dots: true,
+        nav: false,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        autoplay: true,
+        dotsData: false,
+        items: 1,
+        responsive: {
+            640: {
+                dotsData: true,
+            }
+        }
+    });
+
+    // add click to custom dotsData
+    // https://stackoverflow.com/questions/52749200/owl-carousel-2-custom-dots-not-clickable
+    $('.owl-dot').click(function() {
+        owlHero.trigger('to.owl.carousel', [$(this).index(), 1000]);
+    })
+
+
+    // owl nav animation
+    // https://stackoverflow.com/questions/56162467/owlcarousel2-animated-dots-onchange
+    // https://jsfiddle.net/mazinoukah/m45hx3v2/3/
+    owlHero.on('changed.owl.carousel', function(event) {
+        navigationFill();
+    })
+
+    function navigationFill() {
+        let pr = $('.owl-theme .owl-dots .owl-dot');
+        $(pr).removeClass('animate');
+
+        let progressbar = $(".owl-theme .owl-dots .owl-dot.active");
+        $(progressbar).addClass('animate');
+    }
+
     // pingpong
     $('.js-owl-carousel--ping-pong').owlCarousel({
         stagePadding: 0,

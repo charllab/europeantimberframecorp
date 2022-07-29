@@ -66,3 +66,11 @@ mark {
 .bg-white {
 	background-color: white;
 }
+
+.container, .container-fluid {
+    @include media-breakpoint-down(sm) {
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+
+}

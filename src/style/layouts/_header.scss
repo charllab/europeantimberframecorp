@@ -2,8 +2,12 @@
     overflow: hidden;
     padding: 0;
 
-    .navbar {
-        padding: 0 $spacer/4;
+    nav.navbar {
+        padding: $spacer 36px;
+        border: 1px solid cyan;
+        @include media-breakpoint-up(lg) {
+            padding: $spacer $spacer/4;
+        }
     }
 
     .navbar-dark .navbar-toggler {
@@ -130,5 +134,25 @@ a.social-link {
     text-decoration: none !important;
     &:hover {
         border: 2px solid rgba(white, 0.7);
+    }
+}
+
+.home {
+    #header {
+
+        @include media-breakpoint-up(lg) {
+            height: 100vh;
+            min-height: 45rem;
+            position: absolute;
+            border: 1px solid red;
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            z-index: 1001;
+        }
+
+
     }
 }
