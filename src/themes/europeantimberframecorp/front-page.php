@@ -106,7 +106,7 @@
             </div><!-- container -->
         </section>
 
-        <section id="testimonials" class="bg-md-half-and-half">
+        <section id="testimonials" class="bg-md-half-and-half position-relative">
             <div class="container">
                 <div class="row no-gutters align-content-center">
                     <div class="col-md-2">
@@ -114,7 +114,7 @@
                     </div><!-- col -->
                     <div class="col-12 col-md-10 bg-dark">
                             <div class="pt-1 pt-md-7 pb-md-4">
-                                <div class="owl-carousel owl-theme js-testimonialsSlider pb-7 pb-md-0">
+                                <div class="owl-carousel owl-theme js-testimonialsSlider pb-5 pb-md-0">
                                     <div class="item">
                                         <h4 class="text-white">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
                                         <p class="text-grey">Donovan Imbeau</p>

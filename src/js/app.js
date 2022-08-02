@@ -81,6 +81,7 @@ jQuery(function () {
         dots: false,
         items: 1,
         navText: ''
+
     });
 
     // end of Ping Pong OwlCarousel ===========================
