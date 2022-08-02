@@ -1,3 +1,4 @@
+// general
 .block__tint-overlay {
     background-color: #000;
     opacity: .5;
@@ -28,8 +29,34 @@
     min-height: 700px;
 }
 
+.rotated-md {
+    @include media-breakpoint-up(md) {
+        transform: rotate(-90deg);
+    }
+}
 
-//
+.column-lg-count--2 {
+
+    @include media-breakpoint-up(lg) {
+        column-count: 2;
+        column-gap: $spacer*4.25;
+    }
+
+}
+
+.hide-overflow {
+    overflow: hidden !important;
+}
+
+.bg-md-half-and-half {
+    background-color: $dark;
+    @include media-breakpoint-up(md) {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(28, 28, 28, 1) 40%);
+    }
+}
+
+// front-page
 #hero-slider {
     @include media-breakpoint-up(lg) {
         p.lead {
@@ -38,6 +65,155 @@
     }
 }
 
+#reasonsSection {
+    .item {
+        background-repeat: no-repeat;
+        background-position: center;
+        height: $spacer*16;
+        background-size: cover;
+        @include media-breakpoint-up(xs) {
+            height: $spacer*24;
+        }
+
+        .small {
+            font-size: .8rem;
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        z-index: 99;
+        bottom: $spacer*2;
+        width: 32%;
+        text-align: right;
+        @include media-breakpoint-up(xs) {
+            width: 30%;
+            text-align: left;
+        }
+    }
+
+    .owl-prev, .owl-next {
+        background-color: white;
+        border: 1px solid rgba($primary, .15);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .owl-prev {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%231c1c1c'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: calc(50% - 1px) center;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+    }
+
+    .owl-next {
+        background-color: $primary;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-position: calc(50% + 1px) center;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    }
+
+    .owl-theme .owl-nav [class*='owl-']:hover {
+        background-color: darken($primary, 12.5%) !important;
+        background-color: $primary;
+    }
+}
+
+.reason-block {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 66%;
+
+    p {
+        max-width: 260px;
+    }
+}
+
+//testimonials
+
+.js-testimonialsSlider {
+
+    @include media-breakpoint-up(md) {
+        .item {
+            h3 {
+                max-width: none;
+            }
+
+            max-width: 580px;
+            border: 1px solid red;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}
+
+.owl-carousel.owl-theme.js-testimonialsSlider {
+
+    .owl-nav {
+        position: absolute;
+        z-index: 999;
+        left: -43px;
+        bottom: 0;
+        width: 48px;
+        text-align: left;
+        height: 96px;
+        @include media-breakpoint-up(md) {
+            left: -48px;
+            bottom: -$spacer*4;
+        }
+    }
+
+    button {
+        margin: 0;
+    }
+
+    .owl-prev, .owl-next {
+        background-color: white;
+        width: 48px;
+        height: 48px;
+        border-radius: 0;
+        background-repeat: no-repeat !important;
+        background-position: center;
+        margin: 0 !important;
+        display: block;
+    }
+    .owl-prev {
+        background-color: $primary !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: calc(50% - 1px) center;
+        &:hover {
+            background-color: darken($primary, 12.5%) !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            background-position: calc(50% - 1px) center;
+        }
+    }
+
+    .owl-next {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%231c1c1c'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-position: calc(50% + 1px) center;
+        &:hover {
+            background-color: darken($primary, 12.5%) !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-position: calc(50% + 1px) center;
+        }
+    }
+
+    .owl-theme .owl-nav [class*='owl-']:hover {
+        background-color: $primary !important;
+    }
+}
+
+
 // ping pong start
 .ping-pong {
 
@@ -45,7 +221,7 @@
     margin-bottom: $spacer;
 
     @include media-breakpoint-up(lg) {
-        padding: $spacer*2 0;
+        padding-bottom: $spacer*2;
         margin-bottom: 0;
     }
 
@@ -97,6 +273,72 @@
 
 }
 
+.ping-pong--carousel-column {
+
+    @include media-breakpoint-up(md) {
+        width: 740px;
+    }
+
+    .owl-carousel.owl-theme.js-pingPongSlider {
+        .item {
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: $spacer*14;
+            background-size: cover;
+            @include media-breakpoint-up(lg) {
+                min-height: $spacer*31;
+            }
+        }
+
+        .owl-nav {
+            position: absolute;
+            z-index: 999;
+            bottom: 0;
+            width: 30%;
+            text-align: left;
+            height: 48px;
+        }
+
+        button {
+            margin: 0;
+        }
+
+        .owl-prev, .owl-next {
+            background-color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 !important;
+        }
+
+        .owl-prev {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%231c1c1c'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            background-position: calc(50% - 1px) center;
+
+            &:hover {
+                background-color: darken($primary, 12.5%) !important;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+        }
+
+        .owl-next {
+            background-color: $primary !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-position: calc(50% + 1px) center;
+
+            &:hover {
+                background-color: darken($primary, 12.5%) !important;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+
+        .owl-theme .owl-nav [class*='owl-']:hover {
+            background-color: darken($primary, 12.5%) !important;
+        }
+    }
+}
 
 @include media-breakpoint-up(lg) {
 

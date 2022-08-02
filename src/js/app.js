@@ -1,6 +1,6 @@
 jQuery(function () {
 
-    // Hero Carousel
+    // front-page Hero OwlCarousel ==================================
     var owlHero = jQuery('#hero-slider').owlCarousel({
         loop: true,
         margin: 0,
@@ -25,7 +25,6 @@ jQuery(function () {
         owlHero.trigger('to.owl.carousel', [$(this).index(), 1000]);
     })
 
-
     // owl nav animation
     // https://stackoverflow.com/questions/56162467/owlcarousel2-animated-dots-onchange
     // https://jsfiddle.net/mazinoukah/m45hx3v2/3/
@@ -40,19 +39,51 @@ jQuery(function () {
         let progressbar = $(".owl-theme .owl-dots .owl-dot.active");
         $(progressbar).addClass('animate');
     }
+    // end of front-page Hero OwlCarousel ===========================
 
-    // pingpong
-    $('.js-owl-carousel--ping-pong').owlCarousel({
-        stagePadding: 0,
+
+    // front-page Reasons OwlCarousel ==================================
+    jQuery('#reasonsSlider').owlCarousel({
         loop:true,
         margin:0,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
         nav:true,
-        responsive:{
-            0:{
-                items:1
-            }
-        }
-    })
+        dots: false,
+        items: 1,
+        navText: ''
+    });
+    // end of Reasons OwlCarousel ===========================
+
+    // Ping Pong OwlCarousel ==================================
+    jQuery('.js-pingPongSlider').owlCarousel({
+        loop:true,
+        margin:0,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        nav:true,
+        dots: false,
+        items: 1,
+        navText: ''
+    });
+    // end of Ping Pong OwlCarousel ===========================
+
+    // Testimonials OwlCarousel ==================================
+    jQuery('.js-testimonialsSlider').owlCarousel({
+        loop:true,
+        margin:0,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        nav:true,
+        dots: false,
+        items: 1,
+        navText: ''
+    });
+
+    // end of Ping Pong OwlCarousel ===========================
 
     // Auto target _blank external links
     targetBlankExternalLinks();

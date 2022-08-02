@@ -61,7 +61,6 @@ $spacers: map-merge((
     14: ($spacer * 14),
     35: ($spacer * .35),
     250: ($spacer * .25),
-    45: ($spacer * 4.5),
     50: ($spacer * .5),
     75: ($spacer * .75),
     125: ($spacer * 1.25),
@@ -69,7 +68,8 @@ $spacers: map-merge((
     175: ($spacer * 1.75),
     225: ($spacer * 2.25),
     25: ($spacer * 2.5),
-    350: ($spacer * 3.5)
+    350: ($spacer * 3.5),
+    45: ($spacer * 4.5),
 
 ), $spacers);
 
