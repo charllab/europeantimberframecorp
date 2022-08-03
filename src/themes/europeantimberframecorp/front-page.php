@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main class="pt-1 pt-lg-3">
+    <main class="pt-1 pt-lg-3" id="main">
 
         <section id="intro" class="pb-1 pb-md-150 pb-lg-2">
             <div class="container">
@@ -83,7 +83,7 @@
                             produce are capable of various health benefits from easing lung problems and lowering heart
                             rate. Your home will not only be beautiful but it will also be excellent for your health.</p>
                     </div><!-- col -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm---wider">
                         <div class="pl-xl-25 ping-pong--carousel-column">
                             <div class="position-relative">
                                 <div class="owl-carousel owl-theme js-pingPongSlider">
@@ -110,20 +110,20 @@
             <div class="container">
                 <div class="row no-gutters align-content-center">
                     <div class="col-md-2">
-                            <p class="mb-0 rotated d-none d-md-block">TESTIMONIALS</p>
+                            <p class="small mb-0 d-none d-md-block ml-50"><span class="rotated-md small d-inline-block font-weight-bold">TESTIMONIALS</span></p>
                     </div><!-- col -->
                     <div class="col-12 col-md-10 bg-dark">
                             <div class="pt-1 pt-md-7 pb-md-4">
                                 <div class="owl-carousel owl-theme js-testimonialsSlider pb-5 pb-md-0">
                                     <div class="item">
-                                        <h4 class="text-white">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
+                                        <h4 class="text-white mb-2 font-weight-bold">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
                                         <p class="text-grey">Donovan Imbeau</p>
                                     </div><!-- item -->
 
                                     <!--repeater start-->
 
-                                    <div class="item text-white">
-                                        <h4 class="text-white">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
+                                    <div class="item">
+                                        <h4 class="text-white mb-2 font-weight-bold">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
                                         <p class="text-grey">Donovan Imbeau</p>
                                     </div><!-- item -->
 

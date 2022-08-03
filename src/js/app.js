@@ -1,6 +1,7 @@
 jQuery(function () {
 
     // front-page Hero OwlCarousel ==================================
+
     var owlHero = jQuery('#hero-slider').owlCarousel({
         loop: true,
         margin: 0,
@@ -13,43 +14,53 @@ jQuery(function () {
         dotsData: false,
         items: 1,
         responsive: {
-            640: {
+            768: {
                 dotsData: true,
             }
         }
     });
 
-    // add click to custom dotsData
-    // https://stackoverflow.com/questions/52749200/owl-carousel-2-custom-dots-not-clickable
-    $('.owl-dot').click(function() {
-        owlHero.trigger('to.owl.carousel', [$(this).index(), 1000]);
-    })
+    //set const to check if exist
+    const heroSlider = document.getElementById('hero-slider');
 
-    // owl nav animation
-    // https://stackoverflow.com/questions/56162467/owlcarousel2-animated-dots-onchange
-    // https://jsfiddle.net/mazinoukah/m45hx3v2/3/
-    owlHero.on('changed.owl.carousel', function(event) {
+    if (heroSlider && $(window).width() >= 768) {
+
+        // add click to custom dotsData
+        // https://stackoverflow.com/questions/52749200/owl-carousel-2-custom-dots-not-clickable
+        $('.owl-dot').click(function () {
+            owlHero.trigger('to.owl.carousel', [$(this).index(), 1000]);
+        })
+
+        // owl nav animation
+        // https://stackoverflow.com/questions/56162467/owlcarousel2-animated-dots-onchange
+        // https://jsfiddle.net/mazinoukah/m45hx3v2/3/
         navigationFill();
-    })
 
-    function navigationFill() {
-        let pr = $('.owl-theme .owl-dots .owl-dot');
-        $(pr).removeClass('animate');
+        owlHero.on('changed.owl.carousel', function (event) {
+            navigationFill();
+        })
 
-        let progressbar = $(".owl-theme .owl-dots .owl-dot.active");
-        $(progressbar).addClass('animate');
+        function navigationFill() {
+            let pr = $('.owl-theme .owl-dots .owl-dot');
+            $(pr).removeClass('animate');
+
+            let progressbar = $(".owl-theme .owl-dots .owl-dot.active");
+            $(progressbar).addClass('animate');
+        }
+
+        // end of front-page Hero OwlCarousel ===========================
+
     }
-    // end of front-page Hero OwlCarousel ===========================
 
 
     // front-page Reasons OwlCarousel ==================================
     jQuery('#reasonsSlider').owlCarousel({
-        loop:true,
-        margin:0,
+        loop: true,
+        margin: 0,
         autoplay: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
-        nav:true,
+        nav: true,
         dots: false,
         items: 1,
         navText: ''
@@ -58,12 +69,12 @@ jQuery(function () {
 
     // Ping Pong OwlCarousel ==================================
     jQuery('.js-pingPongSlider').owlCarousel({
-        loop:true,
-        margin:0,
+        loop: true,
+        margin: 0,
         autoplay: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
-        nav:true,
+        nav: true,
         dots: false,
         items: 1,
         navText: ''
@@ -72,16 +83,15 @@ jQuery(function () {
 
     // Testimonials OwlCarousel ==================================
     jQuery('.js-testimonialsSlider').owlCarousel({
-        loop:true,
-        margin:0,
+        loop: true,
+        margin: 0,
         autoplay: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
-        nav:true,
+        nav: true,
         dots: false,
         items: 1,
         navText: ''
-
     });
 
     // end of Ping Pong OwlCarousel ===========================
@@ -136,8 +146,8 @@ var targetBlankExternalLinks = function () {
         + ')|(localhost:\\d{4})|(\\/.*))(\\/.*)?$', '');
 
     jQuery('a').filter(function () {
-            var href = jQuery(this).attr('href');
-            return !internalLinkRegex.test(href);
+        var href = jQuery(this).attr('href');
+        return !internalLinkRegex.test(href);
         })
         .each(function () {
             jQuery(this).attr('target', '_blank');

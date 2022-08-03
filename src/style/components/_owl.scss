@@ -2,30 +2,30 @@
 * 	Default theme - Owl Carousel CSS File
 */
 
-$color-base:			#869791 !default;
-$color-white:			#FFF !default;
-$color-gray:			#D6D6D6 !default;
+$color-base: #869791 !default;
+$color-white: #FFF !default;
+$color-gray: #D6D6D6 !default;
 
 //nav
 
-$nav-color: 			$color-white !default;
-$nav-color-hover:		$color-white !default;
-$nav-font-size: 		14px !default;
-$nav-rounded: 			3px !default;
-$nav-margin: 			5px !default;
-$nav-padding: 			4px 7px !default;
-$nav-background: 		$color-gray !default;
-$nav-background-hover:	$color-base !default;
-$nav-disabled-opacity: 	0.5 !default;
+$nav-color: $color-white !default;
+$nav-color-hover: $color-white !default;
+$nav-font-size: 14px !default;
+$nav-rounded: 3px !default;
+$nav-margin: 5px !default;
+$nav-padding: 4px 7px !default;
+$nav-background: $color-gray !default;
+$nav-background-hover: $color-base !default;
+$nav-disabled-opacity: 0.5 !default;
 
 //dots
 
-$dot-width:				10px !default;
-$dot-height:			10px !default;
-$dot-rounded:			30px !default;
-$dot-margin: 			5px 7px !default;
-$dot-background:		$color-gray !default;
-$dot-background-active:	$color-base !default;
+$dot-width: 10px !default;
+$dot-height: 10px !default;
+$dot-rounded: 30px !default;
+$dot-margin: 5px 7px !default;
+$dot-background: $color-gray !default;
+$dot-background-active: $color-base !default;
 
 
 /*
@@ -51,10 +51,11 @@ $dot-background-active:	$color-base !default;
 
             &:hover {
                 background: $nav-background-hover;
-                color:$nav-color-hover;
+                color: $nav-color-hover;
                 text-decoration: none;
             }
         }
+
         .disabled {
             opacity: $nav-disabled-opacity;
             cursor: default;
@@ -131,13 +132,13 @@ $dot-background-active:	$color-base !default;
     }
 
     .owl-wrapper,
-    .owl-item{
+    .owl-item {
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
     }
 
     .owl-item {
@@ -148,6 +149,7 @@ $dot-background-active:	$color-base !default;
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
     }
+
     .owl-item img {
         display: block;
         width: 100%;
@@ -175,7 +177,7 @@ $dot-background-active:	$color-base !default;
         background: none;
         color: inherit;
         border: none;
-        padding:0!important;
+        padding: 0 !important;
         font: inherit;
     }
 
@@ -235,34 +237,36 @@ $dot-background-active:	$color-base !default;
     margin-right: auto;
 }
 
-.owl-theme .owl-dot {
-    color: white;
-    font-size: 13px;
-    font-weight: bold;
-    width: 30%;
-    width: calc(33.3333% - 36px);
-    margin-right: 36px;
-    text-align: left;
-    padding-bottom: $spacer*.75;
-    border-bottom: 1px solid rgba(white,.3);
-    position: relative;
-}
-
-.owl-theme .owl-dot.active.animate:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    border-bottom: solid 1px white;
-    animation: border_anim 9s linear forwards;
-}
-
-@keyframes border_anim {
-    0%{
-        width: 0%;
+@include media-breakpoint-up(md) {
+    .owl-theme .owl-dot {
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        width: 30%;
+        width: calc(33.3333% - 36px);
+        margin-right: 36px;
+        text-align: left;
+        padding-bottom: $spacer*.75;
+        border-bottom: 1px solid rgba(white, .3);
+        position: relative;
     }
-    100%{
-        width: 100%;
+
+    .owl-theme .owl-dot.active.animate:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        border-bottom: solid 1px white;
+        animation: border_anim 9s linear forwards;
+    }
+
+    @keyframes border_anim {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
     }
 }

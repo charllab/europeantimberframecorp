@@ -32,6 +32,7 @@
 .rotated-md {
     @include media-breakpoint-up(xs) {
         transform: rotate(-90deg);
+        transform-origin:top right;
     }
 }
 
@@ -62,6 +63,19 @@
         p.lead {
             max-width: 580px;
         }
+    }
+}
+
+.scroll-down--arrow {
+    position: absolute;
+    bottom: $spacer*2;
+    width: 100%;
+    z-index: 99;
+    svg {
+        display: block;
+        fill:white;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -140,11 +154,17 @@
 
 //testimonials
 
+#testimonials {
+    .small {
+        font-size: 11px;
+    }
+}
+
 .js-testimonialsSlider {
 
     .item {
-        h3 {
-            max-width: none;
+        h4 {
+            max-width: 500px;
         }
 
         max-width: 88%;
@@ -247,7 +267,12 @@
     }
 
     img + a {
-        margin-top: $spacer*2;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        @include media-breakpoint-up(lg) {
+            margin-top: $spacer*2;
+            margin-bottom: 0;
+        }
     }
 
 }
@@ -256,13 +281,24 @@
 
     .ping-pong--txt-column {
 
-        p + a, p + a + a {
+        p + a {
             margin-top: $spacer;
+        }
+        p + a + a {
+            margin-top: $spacer/2;
         }
 
         a + a {
-            margin-left: $spacer/2;
             @extend .btn-outline-primary;
+        }
+
+        @include media-breakpoint-up(md) {
+            p + a + a {
+                margin-top: $spacer;
+            }
+            a + a {
+                margin-left: $spacer/2;
+            }
         }
     }
 
@@ -272,6 +308,26 @@
             margin-top: 0;
         }
 
+    }
+
+}
+
+.ping-pong--carousel,
+.ping-pong--txt-btns,
+.ping-pong--img-full {
+
+    border: 1px solid lime;
+
+    @include media-breakpoint-down(sm) {
+        .container,
+        .container-fluid {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .ping-pong--txt-column {
+            padding-left: 51px;
+            padding-right: 51px;
+        }
     }
 
 }
@@ -297,9 +353,12 @@
             position: absolute;
             z-index: 999;
             bottom: 0;
-            width: 30%;
+            width: 100%;
             text-align: left;
             height: 48px;
+            @include media-breakpoint-up(sm) {
+                width: 30%;
+            }
         }
 
         button {
