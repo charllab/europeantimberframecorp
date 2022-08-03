@@ -156,3 +156,40 @@ a.social-link {
 
     }
 }
+
+#mobile-nav {
+    background-color: rgba($dark, .85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    ul#main-menu {
+        margin-top: $spacer*4;
+    }
+
+    .nav-link {
+        padding-bottom: $spacer*.75;
+    }
+
+
+    .nav-link, .btn-link {
+        font-size: 1.2rem;
+        font-weight: 700 !important;
+    }
+
+    li.dropdown.show {
+        .menu-item {
+            display: none;
+        }
+    }
+
+    a.social-link {
+        margin-top: $spacer;
+        width: 40px;
+        height: 40px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
