@@ -1,7 +1,7 @@
 // general
 .block__tint-overlay {
     background-color: #000;
-    opacity: .5;
+    opacity: .15;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,6 +56,22 @@
         background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(28, 28, 28, 1) 40%);
     }
 }
+
+
+// services
+.hero-content {
+    position: absolute;
+    bottom: $spacer*2;
+    width: 100%;
+}
+
+.underlay-svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+
 
 // front-page
 #hero-slider {
