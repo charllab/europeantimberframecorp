@@ -17,7 +17,7 @@
                     </div><!-- pl -->
                 </div><!-- col -->
                 <div class="col-md-4 col-lg-3">
-                    <div class="pr-lg-2">
+                    <div class="pr-lg-2 pt-1 mt-md-0">
                         <p class="text-white font-weight-bold">A Canadian EuroTimber Cabana Kit</p>
                     </div><!-- pr -->
                 </div><!-- col -->
