@@ -168,6 +168,16 @@
     }
 }
 
+.card-stack {
+    .col-100-container {
+        display: table;
+        height: 100%;
+    }
+    .col-100 {
+        display: table-cell;
+    }
+}
+
 //testimonials
 
 #testimonials {

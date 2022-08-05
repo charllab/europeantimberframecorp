@@ -1,5 +1,5 @@
 <?php if (have_rows('tt_slide')): ?>
-    <section class="tiptopSlider">
+    <section class="tiptopSlider mb-1 mb-lg-4">
         <section class="my-1 mb-md-2">
             <div class="bg-primary--soft py-1">
                 <div class="container">
@@ -22,7 +22,7 @@
                                 $alt = $image['alt'];
                             endif;
                             ?>
-                            <section class="ping-pong ping-pong--img-full ping-pong--txt-btns overflow-hidden">
+                            <section class="ping-pong ping-pong--img-full ping-pong--txt-btns overflow-hidden mb-0 pb-0">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-5 ping-pong--txt-column offset-lg-1 order-lg-1">

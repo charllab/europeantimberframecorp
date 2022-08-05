@@ -69,9 +69,10 @@ jQuery(function () {
                 autoHeight:true,
                 autoplay: false,
             },
-            768: {
+            1200: {
                 autoplay: true,
-                autoHeight:false
+                autoHeight:false,
+                autoHeightClass: 'owl-height'
             },
         }
     });
