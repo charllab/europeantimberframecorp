@@ -69,6 +69,10 @@ mark {
 	background-color: white;
 }
 
+.bg-primary--soft {
+    background-color: rgba($primary,.1);
+}
+
 .container, .container-fluid {
     @include media-breakpoint-down(sm) {
         padding-right: 36px;

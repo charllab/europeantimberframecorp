@@ -2,6 +2,9 @@
 get_header();
 ?>
 
+<?php get_template_part('partials/header/toptipslider'); ?>
+
+
 <main>
 
     <?php if (is_page([1716])) : ?>

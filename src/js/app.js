@@ -44,14 +44,70 @@ jQuery(function () {
             let pr = $('.owl-theme .owl-dots .owl-dot');
             $(pr).removeClass('animate');
 
-            let progressbar = $(".owl-theme .owl-dots .owl-dot.active");
+            let progressbar = $('.owl-theme .owl-dots .owl-dot.active');
             $(progressbar).addClass('animate');
         }
 
-        // end of front-page Hero OwlCarousel ===========================
+    }
+    // end of front-page Hero OwlCarousel ===========================
+
+    // tip-top OwlCarousel ==========================================
+
+    var owltT = jQuery('.js-tiptopSlider').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        margin: 0,
+        dots: true,
+        nav: false,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 11000,
+        items: 1,
+        dotsData: true,
+        dotsContainer: '.tt-dots',
+        responsive: {
+            0: {
+                autoHeight:true,
+                autoplay: false,
+            },
+            768: {
+                autoplay: true,
+                autoHeight:false
+            },
+        }
+    });
+
+    //set const to check if exist
+    const ttSlider = document.getElementsByClassName('tiptopSlider');
+    console.log(ttSlider);
+
+    if (ttSlider) {
+        console.log('ttS lives');
+
+        // add click to custom dotsData
+        // https://stackoverflow.com/questions/52749200/owl-carousel-2-custom-dots-not-clickable
+        $('.owl-dot').click(function () {
+            owltT.trigger('to.owl.carousel', [$(this).index(), 1000]);
+        })
+
+        // owl nav animation
+        // https://stackoverflow.com/questions/56162467/owlcarousel2-animated-dots-onchange
+        // https://jsfiddle.net/mazinoukah/m45hx3v2/3/
+        navigationFill();
+
+        owltT.on('changed.owl.carousel', function (event) {
+            navigationFill();
+        })
+
+        function navigationFill() {
+            let pr = $('.tt-dots .owl-dot');
+            $(pr).removeClass('animate');
+
+            let progressbar = $('.tt-dots .owl-dot.active');
+            $(progressbar).addClass('animate');
+        }
 
     }
-
+    // end of tip-top OwlCarousel ======================================
 
     // front-page Reasons OwlCarousel ==================================
     jQuery('#reasonsSlider').owlCarousel({
