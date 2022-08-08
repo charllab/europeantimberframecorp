@@ -7,139 +7,120 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-5">
                         <div class="pr-lg-150">
-                            <h2 class="text-primary mb-1">Unsurpassed Quality and Beauty of a Timber Framed Home</h2>
-                            <a href="#" class="btn btn-primary mb-1 mb-lg-0">Learn More</a>
+                            <h2 class="text-primary mb-1"><?php the_field('intro_title'); ?></h2>
+                            <?php if (get_field('intro_button_label')): ?>
+                                <div class="mt-auto">
+                                    <a href="<?php the_field('intro_button_link'); ?>" class="btn btn-primary">
+                                        <?php the_field('intro_button_label'); ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                         </div><!-- pr -->
                     </div><!-- col -->
                     <div class="col-lg-6 column-lg-count--2">
-                        <p>European Timberframe Corp.(oration) is dedicated to the dependable quality and craftsmanship
-                            european style timber framing techniques can bring to your home. Discover the distinctive
-                            style and simple functionality timber framing can offer.</p>
-                        <p>Timber framed homes are capable of the most ambitious open floor layouts free of load bearing
-                            walls and massive window structures, offering panoramic views and an abundance of natural
-                            lighting.</p>
+                        <?php the_field('intro_paragraph'); ?>
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
         </section>
 
-        <section id="reasonsSection" class="mb-1 mb-lg-4">
-            <div class="container px-0">
-                <div class="row no-gutters">
-                    <div class="col-12">
-                        <div class="position-relative">
-                            <div class="owl-carousel owl-theme" id="reasonsSlider">
-                                <div class="item mb-45"
-                                     style="background-image: url('http://via.placeholder.com/1140x598');">
-                                    <div class="reason-block bg-dark p-1 p-lg-2">
-                                        <p class="font-weight-bold text-white mb-50">“By choosing a timber frame house
-                                            or roof system, you’re opening up a whole new world of customized design.
-                                            And we owe it all to old-world technology”</p>
-                                        <p class="small text-grey mb-0">Daniel Kilchenmann</p>
-                                    </div><!-- reason-block -->
-                                </div><!-- item -->
-
-                                <!--repeater start-->
-
-                                <div class="item mb-45"
-                                     style="background-image: url('http://via.placeholder.com/1140x598');">
-                                    <div class="reason-block bg-dark p-1 p-lg-2">
-                                        <p class="font-weight-bold text-white mb-50">“By choosing a timber frame house
-                                            or roof system, you’re opening up a whole new world of customized design.
-                                            And we owe it all to old-world technology”</p>
-                                        <p class="small text-grey mb-0">Daniel Kilchenmann</p>
-                                    </div><!-- reason-block -->
-                                </div><!-- item -->
-                                <!--repeater end-->
-
-                            </div><!-- owl-carousel -->
-                        </div><!-- position-relative -->
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- container -->
-        </section>
+        <?php if (have_rows('reason_block')): ?>
+            <section id="reasonsSection" class="mb-1 mb-lg-4">
+                <div class="container px-0">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="position-relative">
+                                <div class="owl-carousel owl-theme" id="reasonsSlider">
+                                    <?php while (have_rows('reason_block')) : the_row(); ?>
+                                        <?php $image = get_sub_field('reason_image');
+                                        if ($image):
+                                            $url = $image['url'];
+                                            $title = $image['title'];
+                                            $alt = $image['alt'];
+                                        endif;
+                                        ?>
+                                        <div class="item mb-45"
+                                             style="background-image: url(<?php echo $image['sizes']['reason_image']; ?>);">
+                                            <div class="reason-block bg-dark p-1 p-lg-2">
+                                                <p class="font-weight-bold text-white mb-50">
+                                                    “<?php the_sub_field('reason'); ?>”</p>
+                                                <p class="small text-grey mb-0"><?php the_sub_field('reason_author'); ?></p>
+                                            </div><!-- reason-block -->
+                                        </div><!-- item -->
+                                    <?php endwhile; ?>
+                                </div><!-- owl-carousel -->
+                            </div><!-- position-relative -->
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->
+            </section>
+        <?php endif; ?>
 
         <section class="ping-pong ping-pong--carousel hide-overflow">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 ping-pong--txt-column">
-                        <h2>We Build Your Dream Timber Frame Home</h2>
-                        <p class="font-weight-bold">Your Vision for the Perfect Home</p>
-                        European Timberframe Corp. understands how important your home means to you. Designing and building
-                        your very own custom home can be a thrilling experience and we believe that our clients should be
-                        there every step of the way. We work with you to ensure that your vision and expectations are
-                        brought to reality to create a home that is truly unique to you.</p>
-                        <p class="font-weight-bold">Team of Seasoned Timber Frame Specialists</p>
-                        <p>Our team is made up of some of the finest timber frame craftsmen in North America. Trained
-                            extensively in the centuries old techniques of european timber framing, they are capable of
-                            crafting modern wonders of architecture. Our team of professionals is fully equipped to design
-                            your home to your vision, build every custom beam and post, and erect them to create your home
-                            ensuring that the highest quality is implemented every step of the way.</p>
-                        <p class="font-weight-bold">We Only use the Finest Timber for Your Home</p>
-                        <p>Your home deserves nothing less than the finest materials on earth and luckily we are blessed
-                            with the finest timber on earth for timber framed homes, the BC Douglas fir. This specific tree
-                            species provides unparalleled quality and beauty, while also having a variety of benefits such
-                            as humidity regulation, fire resistance, and natural insulation. The oils the Douglas fir
-                            produce are capable of various health benefits from easing lung problems and lowering heart
-                            rate. Your home will not only be beautiful but it will also be excellent for your health.</p>
+                        <h2 class="mb-1"><?php the_field('block_title'); ?></h2>
+                        <?php the_field('block_content'); ?>
                     </div><!-- col -->
-                    <div class="col-lg-6 col-sm---wider">
-                        <div class="pl-xl-25 ping-pong--carousel-column">
-                            <div class="position-relative">
-                                <div class="owl-carousel owl-theme js-pingPongSlider">
-                                    <div class="item"
-                                         style="background-image: url('http://via.placeholder.com/1140x598');">
-                                    </div><!-- item -->
-
-                                    <!--repeater start-->
-
-                                    <div class="item"
-                                         style="background-image: url('http://via.placeholder.com/1140x598');">
-                                    </div><!-- item -->
-                                    <!--repeater end-->
-
-                                </div><!-- owl-carousel -->
-                            </div><!-- position-relative -->
-                        </div><!-- pl ping-pong--carousel-column -->
-                    </div><!-- col -->
+                    <?php if (have_rows('carousel_images')): ?>
+                        <div class="col-lg-6 col-sm---wider">
+                            <div class="pl-xl-25 ping-pong--carousel-column">
+                                <div class="position-relative">
+                                    <div class="owl-carousel owl-theme js-pingPongSlider">
+                                        <?php while (have_rows('carousel_images')) : the_row(); ?>
+                                            <?php $image = get_sub_field('carousel_image');
+                                            if ($image):
+                                                $url = $image['url'];
+                                                $title = $image['title'];
+                                                $alt = $image['alt'];
+                                            endif;
+                                            ?>
+                                            <div class="item"
+                                                 style="background-image: url(<?php echo $image['sizes']['ping-pong-carousel']; ?>);">
+                                            </div><!-- item -->
+                                        <?php endwhile; ?>
+                                    </div><!-- owl-carousel -->
+                                </div><!-- position-relative -->
+                            </div><!-- pl ping-pong--carousel-column -->
+                        </div><!-- col -->
+                    <?php endif; ?>
                 </div><!-- row -->
             </div><!-- container -->
         </section>
 
-        <section id="testimonials" class="bg-md-half-and-half position-relative">
-            <div class="container">
-                <div class="row no-gutters align-content-center">
-                    <div class="col-md-2">
-                            <p class="small mb-0 d-none d-md-block ml-50"><span class="rotated-md small d-inline-block font-weight-bold">TESTIMONIALS</span></p>
-                    </div><!-- col -->
-                    <div class="col-12 col-md-10 bg-dark">
+        <?php if (have_rows('testimonials')): ?>
+            <section id="testimonials" class="bg-md-half-and-half position-relative">
+                <div class="container">
+                    <div class="row no-gutters align-content-center">
+                        <div class="col-md-2">
+                            <p class="small mb-0 d-none d-md-block ml-50"><span
+                                    class="rotated-md small d-inline-block font-weight-bold">TESTIMONIALS</span></p>
+                        </div><!-- col -->
+                        <div class="col-12 col-md-10 bg-dark">
                             <div class="pt-1 pt-md-7 pb-md-4">
                                 <div class="owl-carousel owl-theme js-testimonialsSlider pb-5 pb-md-0">
-                                    <div class="item">
-                                        <h4 class="text-white mb-2 font-weight-bold">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
-                                        <p class="text-grey">Donovan Imbeau</p>
-                                    </div><!-- item -->
-
-                                    <!--repeater start-->
-
-                                    <div class="item">
-                                        <h4 class="text-white mb-2 font-weight-bold">“Our experience with European Timberframe has been a positive one. They are always quick to answer emails and have detailed drawings and information for our clients.”</h4>
-                                        <p class="text-grey">Donovan Imbeau</p>
-                                    </div><!-- item -->
-
+                                    <?php while (have_rows('testimonials')) : the_row(); ?>
+                                        <div class="item">
+                                            <h4 class="text-white mb-2 font-weight-bold">
+                                                “<?php the_sub_field('testimonial'); ?>”</h4>
+                                            <p class="text-grey"><?php the_sub_field('testimonial_author'); ?></p>
+                                        </div><!-- item -->
+                                    <?php endwhile; ?>
                                 </div><!-- owl-carousel -->
                             </div><!-- position-relative -->
-                    </div><!-- row -->
-                </div><!-- container -->
-        </section>
-
+                        </div><!-- row -->
+                    </div><!-- container -->
+            </section>
+        <?php endif; ?>
 
     </main>
 
+
+
+
 <?php if (have_rows('ping_pong_general')): ?>
-
     <?php while (have_rows('ping_pong_general')): the_row(); ?>
-
         <?php $image = get_sub_field('image');
         if ($image):
             // Image variables.
@@ -148,47 +129,35 @@
             $alt = $image['alt'];
         endif;
         ?>
-
         <section class="ping-pong ping-pong--img-full ping-pong--<?php the_sub_field('layout'); ?> ping-pong--txt-btns">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 ping-pong--txt-column">
                         <div class="ping-pong--max-width">
                             <?php the_sub_field('content'); ?>
-
                             <?php if (get_sub_field('buttons')): ?>
                                 <?php if (have_rows('buttons')): ?>
                                     <?php while (have_rows('buttons')): the_row(); ?>
-
                                         <a href="<?php the_sub_field('link'); ?>"
                                            class="btn btn-primary"><?php the_sub_field('label'); ?></a>
-
                                     <?php endwhile; ?>
                                 <?php endif; ?>
-
                             <?php endif; ?>
-
                         </div><!-- ping-pong--max-width -->
                     </div><!-- col -->
-
                     <div class="col-lg-6 text-center ping-pong--img-column px-0"
                          style="background-image: url('<?php echo esc_url($url); ?>');">
                         <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
                              class="d-xl-none img-fluid d-block">
                     </div><!-- col -->
-
                 </div><!-- row -->
             </div><!-- container -->
         </section>
-
     <?php endwhile; ?>
-
 <?php endif; ?>
 
 
 <?php if (have_rows('ping_pong_narrow')): ?>
-
     <?php while (have_rows('ping_pong_narrow')): the_row(); ?>
 
         <section class="ping-pong ping-pong--<?php the_sub_field('layout'); ?> ping-pong--txt-btns">
@@ -222,13 +191,10 @@
                         <?php if (get_sub_field('buttons_below_image')): ?>
                             <?php if (have_rows('buttons_below_image')): ?>
                                 <?php while (have_rows('buttons_below_image')): the_row(); ?>
-
                                     <a href="<?php the_sub_field('link'); ?>"
                                        class="btn btn-primary"><?php the_sub_field('label'); ?></a>
-
                                 <?php endwhile; ?>
                             <?php endif; ?>
-
                         <?php endif; ?>
                     </div><!-- col -->
 
@@ -237,7 +203,6 @@
         </section>
 
     <?php endwhile; ?>
-
 <?php endif; ?>
 
     <section class="ping-pong ping-pong--img-full ping-pong--left">

@@ -42,7 +42,13 @@
         column-count: 2;
         column-gap: $spacer*4.25;
     }
-
+}
+.column-break {
+    @include media-breakpoint-up(lg) {
+        page-break-before:always;
+        break-before: always;
+        display: inline-grid;
+    }
 }
 
 .hide-overflow {

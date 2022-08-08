@@ -7,7 +7,7 @@
                 <?php $herosliderimageurl = get_sub_field('hero_slide_image'); ?>
 
                 <div class="is-full-height position-relative bg-dark"
-                     style="background: #3050A0 url(<?php echo $herosliderimageurl['sizes']['large']; ?>) no-repeat center center; background-size: cover;">
+                     style="background: #3050A0 url(<?php echo $herosliderimageurl['sizes']['hero_image']; ?>) no-repeat center center; background-size: cover;">
                     <div class="block__tint-overlay position-absolute h-100"></div>
                     <div class="item h-100" data-dot="<?php the_sub_field('hero_slide_nav_title'); ?>">
                         <div class="container position-relative h-100">
