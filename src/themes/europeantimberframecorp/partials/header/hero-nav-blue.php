@@ -1,15 +1,15 @@
-<header id="header" class="hero-nav-overlay position-relative z-index-1">
+<header id="header-blue" class="hero-nav-overlay position-relative z-index-1">
 
     <nav class="navbar navbar-expand-lg navbar-dark">
 
         <div class="container d-flex justify-content-between align-items-start position-relative">
             <div class="nav-logo position-relative z-index-100" style="margin-left: -4px;">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <?php get_template_part('partials/header/svg-logo-grey'); ?>
+                    <?php get_template_part('partials/header/svg-logo-blue'); ?>
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
                     <span class="bar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="48" viewBox="0 0 5000 48">
-                          <path id="Path_1112" data-name="Path 1112" d="M0,0H5000V48H0Z" fill="#1c1c1c" opacity="0.25"/>
+                          <path id="Path_1112" data-name="Path 1112" d="M0,0H5000V48H0Z" fill="#374377" opacity="1"/>
                         </svg>
                     </span>
                 </a>
@@ -87,17 +87,5 @@
             </div><!-- row -->
         </div><!-- container -->
     </div><!-- #mobile-nav -->
-
-
-    <?php
-    if (is_front_page()) :
-        get_template_part('partials/header/heroslider');
-    elseif(is_page_template('page-contact.php')):
-        get_template_part('partials/header/contacthero');
-    else :
-        get_template_part('partials/header/heroimage');
-    endif;
-    ?>
-
 
 </header>

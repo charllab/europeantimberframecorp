@@ -1,5 +1,21 @@
 jQuery(function () {
 
+    $('.gallery').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            gallery: {
+                enabled:true,
+                preload: [0,2], // read about this option in next Lazy-loading section
+                navigateByImgClick: true,
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+                tPrev: 'Previous (Left arrow key)', // title for left button
+                tNext: 'Next (Right arrow key)', // title for right button
+                tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
+            }
+        });
+    });
+
     // front-page Hero OwlCarousel ==================================
 
     var owlHero = jQuery('#hero-slider').owlCarousel({
@@ -150,8 +166,22 @@ jQuery(function () {
         items: 1,
         navText: ''
     });
+    // end of js-testimonialsSlider ===========================
 
-    // end of Ping Pong OwlCarousel ===========================
+    // Team Slider OwlCarousel ==================================
+    jQuery('.js-teamSlider').owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        nav: true,
+        dots: false,
+        items: 1,
+        navText: '',
+        navContainer: '.navHere'
+    });
+    // end of Team Slider Carousel ===========================
 
     // Auto target _blank external links
     targetBlankExternalLinks();

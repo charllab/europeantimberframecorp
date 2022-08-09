@@ -36,6 +36,13 @@
     }
 }
 
+.rotated-ops-md {
+    @include media-breakpoint-up(lg) {
+        transform: rotate(90deg);
+        transform-origin:top right;
+    }
+}
+
 .column-lg-count--2 {
 
     @include media-breakpoint-up(lg) {
@@ -348,8 +355,6 @@
 .ping-pong--txt-btns,
 .ping-pong--img-full {
 
-    border: 1px solid lime;
-
     @include media-breakpoint-down(sm) {
         .container,
         .container-fluid {
@@ -483,3 +488,109 @@
         background-image: none !important;
     }
 }
+
+#teamSlider {
+    .js-teamSlider {
+        h3 {
+            line-height: 1;
+        }
+    }
+    .navHere {
+        z-index: 99;
+        position: absolute;
+        bottom: $spacer;
+        left: $spacer;
+    }
+
+    .owl-prev, .owl-next {
+        background-color: white;
+        border: 1px solid rgba($primary, .15);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .owl-prev {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%231c1c1c'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: calc(50% - 1px) center;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+    }
+
+    .owl-next {
+        margin-left: $spacer*.25;
+        background-color: $primary;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-position: calc(50% + 1px) center;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    }
+
+    .navHere [class*='owl-']:hover {
+        background-color: lighten($primary, 25%) !important;
+        background-color: $primary;
+    }
+}
+
+.white-background-svg {
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.dark-background-svg {
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.mail-icon-svg {
+    left: 0;
+    top: -98px;
+    z-index: 1;
+    width: 98px;
+    height: 98px;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media-breakpoint-up(lg) {
+        left: auto;
+        right: 100%;
+        top: 0;
+    }
+}
+
+.submit-pull-me-text {
+    margin-top: -$spacer*6;
+}
+
+.page-template-page-contact {
+    footer {
+        display: none !important;
+    }
+}
+
+#gform_1 {
+    z-index: 900;
+    position: relative;
+}
+
+//gallery hackery
+
+.gallery {
+    & > a.btn-gallery {
+        display: none;
+    }
+    & > a.btn-gallery:first-child {
+        display: inline-block;
+    }
+}
+
+

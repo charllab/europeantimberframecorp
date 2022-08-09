@@ -38,8 +38,7 @@ if (!function_exists('custom_after_setup_theme')) {
 
         register_nav_menus([
             'primary' => 'Primary Menu',
-            'secondary' => 'Footer Menu',
-            'tertiary' => 'Legal Menu'
+            'secondary' => 'Footer Menu'
         ]);
 
         // Style Gutenberg
@@ -48,9 +47,11 @@ if (!function_exists('custom_after_setup_theme')) {
 
         add_image_size('hero_image', 2560, 1400, true);
         add_image_size('reason_image', 1440, 704, true);
+        add_image_size('landscape_feature', 1200, 900, true);
         add_image_size('product-block', 552, 312, true);
         add_image_size('product-col', 992, 755, true);
         add_image_size('ping-pong-carousel', 1200, 900, true);
+        add_image_size('ping-pong-narrow', 900, 682, true);
 
     }
 }

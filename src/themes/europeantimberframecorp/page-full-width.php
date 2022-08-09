@@ -1,16 +1,16 @@
 <?php
+/**
+ *
+ * Template Name: Full Width
+ *
+ */
 get_header();
 ?>
-
-<?php get_template_part('partials/header/toptipslider'); ?>
-
-
-<main>
-        <div class="container py-2">
+    <main class="pt-1 pb-2">
+        <div class="container">
 
             <div class="row">
                 <div class="col-12">
-
 
                     <h2><?php the_title(); ?></h2>
 
@@ -28,7 +28,6 @@ get_header();
             </div><!-- row -->
         </div><!-- container -->
 
-</main>
+    </main>
 
-
-<?php get_footer(); ?>
+<?php get_footer();

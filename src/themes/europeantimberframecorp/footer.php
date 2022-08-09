@@ -1,4 +1,4 @@
-<footer>
+<footer class="position-relative z-index-100">
 
     <section id="letstalk" class="bg-primary py-3 py-lg-5">
         <div class="container">
@@ -6,7 +6,7 @@
                 <div class="col-lg-3 text-lg-center d-none d-lg-block">
                     <span class="text-white text-uppercase font-weight-bold">- Hello!</span>
                 </div><!-- col -->
-                <div class="col-lg-8">
+                <div class="col-lg-8 text-center text-lg-left">
                     <h2 class="text-white text-capitalize mb-150">Ready to make your dreams of a timber frame home a
                         reality?</h2>
                     <a href="#" class="btn btn-outline-primary">Feeling Inspired? Let’s Talk</a>

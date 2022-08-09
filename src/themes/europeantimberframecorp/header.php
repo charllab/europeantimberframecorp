@@ -20,4 +20,9 @@
 
 <body <?php body_class(); ?>>
 
-    <?php get_template_part('partials/header/hero-nav-overlay'); ?>
+    <?php if (is_page_template('page-about.php') || is_page_template('page-gallery.php') || is_page_template('page-full-width.php')) {
+        get_template_part('partials/header/hero-nav-blue');
+    } else {
+            get_template_part('partials/header/hero-nav-overlay');
+    }?>
+

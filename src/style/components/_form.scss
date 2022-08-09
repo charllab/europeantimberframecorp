@@ -1,0 +1,27 @@
+#gform_1 {
+    .gform_footer {
+        margin: 0;
+        padding: 0;
+    }
+    #input_1_6 {
+        margin-bottom: $spacer;
+    }
+
+
+    @include media-breakpoint-between(lg,xl) {
+        padding-bottom: $spacer;
+    }
+}
+
+#gform_submit_button_1 {
+    @extend .btn-primary;
+    height: $spacer*3;
+    width: $spacer*8;
+    margin-bottom: 0;
+    font-weight: bold;
+    border: 1px solid $primary;
+    &:hover,
+    &:active {
+        background-color: lighten($primary, 25%);
+    }
+}

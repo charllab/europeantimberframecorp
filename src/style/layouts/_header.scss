@@ -4,7 +4,6 @@
 
     nav.navbar {
         padding: $spacer 36px;
-        border: 1px solid cyan;
         @include media-breakpoint-up(lg) {
             padding: $spacer $spacer/4;
         }
@@ -138,7 +137,6 @@ a.social-link {
         height: 100vh;
         min-height: 45rem;
         position: absolute;
-        border: 1px solid red;
     }
 
     nav {
@@ -146,7 +144,6 @@ a.social-link {
         width: 100%;
         z-index: 1001;
     }
-
 
 }
 
@@ -198,4 +195,15 @@ a.social-link {
 
 #mobile-nav.show {
     opacity: 1;
+}
+
+#header-blue.hero-nav-overlay {
+    overflow: visible;
+}
+
+.page-template-page-contact {
+    .hero-nav-overlay {
+        height: auto !important;
+        overflow: visible;
+    }
 }
