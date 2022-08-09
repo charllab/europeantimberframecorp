@@ -96,44 +96,20 @@ get_header(); ?>
             <section id="team">
                 <div class="container mb-250 mb-lg-4">
                     <div class="row">
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
+                            <?php while (have_rows('team_members')) : the_row(); ?>
+                                <?php $photo = get_sub_field('photo');
+                                if ($photo):
+                                    // Image variables.
+                                    $url = $photo['url'];
+                                    $title = $photo['title'];
+                                    $alt = $photo['alt'];
+                                endif;
+                                ?>
+                                <div class="col-sm-6 col-md-4 col-lg-2">
+                                <img src="<?php echo $photo['sizes']['team_member']; ?>" alt="<?php the_sub_field('name');?>"
                                      class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <!--repeat start-->
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
-                                     class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
-                                     class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
-                                     class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
-                                     class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-2">
-                            <a href="#">
-                                <img src="http://via.placeholder.com/526x538" alt=" "
-                                     class="d-block img-fluid mb-1 mb-lg-0">
-                            </a>
-                        </div>
-                        <!--repeat end-->
+                                </div>
+                            <?php endwhile; ?>
                     </div><!-- row -->
                 </div><!-- container -->
 

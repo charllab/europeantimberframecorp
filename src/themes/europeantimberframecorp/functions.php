@@ -45,6 +45,7 @@ if (!function_exists('custom_after_setup_theme')) {
         add_theme_support('editor-styles');
         add_editor_style('style-editor.css');
 
+        add_image_size('team_member', 526, 538, true);
         add_image_size('hero_image', 2560, 1400, true);
         add_image_size('reason_image', 1440, 704, true);
         add_image_size('landscape_feature', 1200, 900, true);
