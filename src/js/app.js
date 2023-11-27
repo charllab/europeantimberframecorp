@@ -240,3 +240,16 @@ var targetBlankExternalLinks = function () {
             jQuery(this).attr('target', '_blank');
         });
 };
+
+
+// add active toggle to FAQ accordion
+document.addEventListener("DOMContentLoaded", function() {
+    const accordionButtons = document.querySelectorAll('.faq-accordion-button');
+
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const container = this.querySelector('.state-ico');
+            container.classList.toggle('active');
+        });
+    });
+});
