@@ -1,0 +1,40 @@
+a.tag-link {
+    color: #fff;
+    display: inline-block;
+    text-transform: capitalize;
+    border-radius: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+    background-color: $primary;
+    padding: 1rem 1.6rem;
+    margin-bottom: .375rem;
+    text-decoration: none;
+}
+
+a.tag-link:hover {
+    background-color: #2b345d;
+}
+
+a.resource--block {
+    display: block;
+    min-height: 350px;
+    .resource__thumbnail {
+        border: 1px solid #e1e0e0;
+        border-radius: 1px;
+        max-height: 720px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        overflow: hidden;
+        scale:.99;
+        transition: all .15s ease-out .05s;
+    }
+    &:hover {
+        text-decoration: none;
+        & > .resource__thumbnail {
+            border-color: darken(#e1e0e0, 10%);
+            box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+            scale:1
+        }
+    }
+}
+

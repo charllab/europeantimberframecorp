@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 
-    <?php if (is_page_template('page-about.php') || is_page_template('page-gallery.php') || is_page_template('page-full-width.php') | is_page_template('page-faq.php')) {
+    <?php if (is_page_template('page-about.php') || is_page_template('page-gallery.php') || is_page_template('page-full-width.php')  || is_page_template('page-resources.php') || is_tax('resource_type')) {
         get_template_part('partials/header/hero-nav-blue');
     } else {
             get_template_part('partials/header/hero-nav-overlay');
