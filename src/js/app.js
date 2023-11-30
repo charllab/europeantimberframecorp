@@ -74,7 +74,7 @@ jQuery(function () {
         responsiveClass: true,
         margin: 0,
         dots: true,
-        nav: false,
+        nav: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 11000,
         items: 1,
@@ -86,7 +86,7 @@ jQuery(function () {
                 autoplay: false,
             },
             1200: {
-                autoplay: true,
+                autoplay: false,
                 autoHeight:false,
                 autoHeightClass: 'owl-height'
             },

@@ -2,7 +2,7 @@
 * 	Default theme - Owl Carousel CSS File
 */
 
-$color-base: #869791 !default;
+$color-base: $primary !default;
 $color-white: #FFF !default;
 $color-gray: #D6D6D6 !default;
 
@@ -229,9 +229,7 @@ $dot-background-active: $color-base !default;
 //dot-data sliders
 #hero-slider, .js-tiptopSlider {
     &.owl-theme .owl-nav {
-        border: 1px solid red;
         z-index: 1000;
-        background-color: green;
         position: absolute;
         width: 100%;
         bottom: $spacer*4.5;
@@ -239,6 +237,32 @@ $dot-background-active: $color-base !default;
         display: flex;
         justify-content: space-between;
         align-content: center;
+        & .owl-next,
+        & .owl-prev {
+            span {
+                display: block;
+                width: 44px;
+                height: 44px;
+                background-color: rgba($dark, 0.35);
+                border-radius: 4px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 16px;
+                font-size: 0;
+            }
+        }
+        & .owl-next {
+            span {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(-7.592 -5.37)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                background-position: 55% 50%;
+            }
+        }
+        & .owl-prev {
+            span {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='7.408' height='11.161' viewBox='0 0 7.408 11.161'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon' transform='translate(15 16.531) rotate(180)'%3E%3Cpath id='Shape-2' data-name='Shape' d='M5.95,0,.64,5.674a1,1,0,0,0,0,1.367L.7,7.1a.959.959,0,0,0,1.4,0L5.95,3,9.8,7.106a.959.959,0,0,0,1.4,0l.06-.064a1,1,0,0,0,0-1.367Z' transform='translate(15 5) rotate(90)' fill='%231c1c1c'/%3E%3Cg id='Mask_Group_50' data-name='Mask Group 50' clip-path='url(%23clip-path)'%3E%3Cg id='Color'%3E%3Crect id='Rectangle' width='22' height='22' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+                background-position: 45% 50%;
+            }
+        }
         @include media-breakpoint-up(md) {
             bottom: 50%;
             padding: 0 $spacer*2;
@@ -247,7 +271,7 @@ $dot-background-active: $color-base !default;
     &.owl-theme .owl-dots {
         z-index: 1001;
         position: absolute;
-        bottom: $spacer*4.5;
+        bottom: $spacer*3;
         left: 0;
         right: 0;
         @extend .container;
@@ -286,6 +310,12 @@ $dot-background-active: $color-base !default;
     }
 }
 .tiptopSlider {
+    & .owl-theme .owl-nav {
+        @include media-breakpoint-down(md) {
+            position: relative;
+            bottom:0;
+        }
+    }
     .tt-dots {
         @include media-breakpoint-up(md) {
             display: flex;
@@ -316,7 +346,7 @@ $dot-background-active: $color-base !default;
         }
 
         &.active {
-
+            border-bottom: 2px solid $primary;
         }
 
         //&.active.animate:before {
