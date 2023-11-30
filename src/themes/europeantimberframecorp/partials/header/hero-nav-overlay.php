@@ -5,7 +5,7 @@
         <div class="container d-flex justify-content-between align-items-start position-relative">
             <div class="nav-logo position-relative z-index-100" style="margin-left: -4px;">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <?php get_template_part('partials/header/svg-logo-grey'); ?>
+                    <?php get_template_part('partials/header/svg-logo-blue'); ?>
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
                     <span class="bar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="5000" height="48" viewBox="0 0 5000 48">
