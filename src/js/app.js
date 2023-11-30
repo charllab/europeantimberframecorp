@@ -98,7 +98,7 @@ jQuery(function () {
     console.log(ttSlider);
 
     if (ttSlider) {
-        console.log('ttS lives');
+        // console.log('ttS lives');
 
         // add click to custom dotsData
         // https://stackoverflow.com/questions/52749200/owl-carousel-2-custom-dots-not-clickable
