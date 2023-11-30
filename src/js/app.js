@@ -23,10 +23,10 @@ jQuery(function () {
         margin: 0,
         responsiveClass: true,
         dots: true,
-        nav: false,
+        nav: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
-        autoplay: true,
+        autoplay: false,
         dotsData: false,
         items: 1,
         responsive: {

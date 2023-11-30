@@ -40,22 +40,8 @@
 
 <div class="scroll-down--arrow">
     <a href="#main" class="scrollable-anchor">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11.274" height="7.547" viewBox="0 0 11.274 7.547">
-            <defs>
-                <clipPath id="clip-path">
-                    <path id="Shape" d="M11.3.761a.962.962,0,0,0-1.411,0L6,4.945,2.116.76A.962.962,0,0,0,.7.761L.629.843a1,1,0,0,0,0,1.359L6,8l5.371-5.8a1,1,0,0,0,0-1.359Z" transform="translate(5 7)" fill="rgba(0,0,0,0.7)"/>
-                </clipPath>
-            </defs>
-            <g id="Scroll" transform="translate(-5.363 -7.453)">
-                <g id="Icon">
-                    <path id="Shape-2" data-name="Shape" d="M11.3.761a.962.962,0,0,0-1.411,0L6,4.945,2.116.76A.962.962,0,0,0,.7.761L.629.843a1,1,0,0,0,0,1.359L6,8l5.371-5.8a1,1,0,0,0,0-1.359Z" transform="translate(5 7)" fill="#fff"/>
-                    <g id="Mask_Group_48" data-name="Mask Group 48" clip-path="url(#clip-path)">
-                        <g id="Color">
-                            <rect id="Rectangle" width="22" height="22" fill="#fff"/>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </svg>
+        <img src="<?php bloginfo('template_url'); ?>/images/arrow-down.svg"
+             alt=" "
+             class="d-block mx-auto">
     </a>
 </div>

@@ -88,6 +88,11 @@
 
 // front-page
 #hero-slider {
+    @include media-breakpoint-down(sm) {
+        h1 {
+            font-size: 2.25rem;
+        }
+    }
     @include media-breakpoint-up(lg) {
         p.lead {
             max-width: 580px;
